@@ -1,0 +1,168 @@
+@import url(sanitize.css);
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+body {
+  background-color: #f0f0f0;
+  padding: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+a {
+  color: #666;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+header {
+  background-color: #422814;
+  padding: 10px;
+  color: #fff;
+}
+
+header h1 {
+  font-family: 'Sriracha', cursive;
+  font-size: 24px;
+  margin: 0;
+  font-weight: normal;
+  text-align: center;
+}
+
+.description {
+  clear: left;
+}
+.description img {
+  float: left;
+  margin: 0 10px 10px 0;
+  transition-property: opacity; /* opacityが変わるときにTransitionが適用される */
+  transition-duration: 1s; /* transitionにかける時間を設定 */
+  transition-timing-function: ease; /* イーズイン・アウト設定 */
+  transition-delay: 0s; /* transitionの適用開始時間を設定 */
+}
+.description img:hover {
+  opacity: .5;
+}
+
+
+.information h1 {
+  font-size: 18px;
+  margin: 0 10px 10px 0;
+  float: left;
+}
+
+.information .type {
+  display: inline; /* インラインスタイルに変更 */
+  background-color: #E35A4D;
+  padding: 3px 5px;
+  font-size: 80%;
+  color: #FFF;
+}
+
+.content {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.songs {
+  margin: 0 0 20px; /* 下の余白のみ20pxに */
+}
+
+.songs h2 {
+  clear: left; /* 紹介文の画像回り込みが影響しないようにclear */
+  font-size: 100%; /* フォントの大きさを本文と同じに */
+  font-weight: normal;
+  margin: 0;
+  background-color: #E6E4DD;
+  padding: 5px 10px;
+}
+
+.songs ol {
+  padding: 0;
+  margin: 0;
+  list-style: decimal inside;
+}
+.songs li {
+  border-bottom: 1px solid #ccc;
+  width: 50%; /* ここを50%にすると横並びにならない。50%にするとolではなく外側のdiv.contentsの50%になってしまう */
+  float: left;
+  padding: 5px 10px; /* 上下5px, 左右10px */
+}
+
+.clearfix:after { /* 回り込みで背景が適切に表示されないのを防ぐ */
+  content:" "; /* 高さを確定させて背景を描画 */
+  display: table;
+  clear: both;
+}
+
+@media only screen and (max-width:600px){
+  .description img {
+    float: none;  /* 回り込みを解除する */
+    display: block; /* 表示をブロック状態にする(inlineの状態だと余白設定適用がされないため) */
+    margin: 0 auto; /* 横余白をautoにして自動的に中央に揃える */
+  }
+
+  header {
+    padding: 5px; /* PC画面では10px */
+  }
+  header h1 {
+    font-size: 12px; /* PC画面では24px */
+  }
+
+  .songs li {
+    float: none;
+    width: inherit; /* 幅を元に戻す(親からの継承) */
+  }
+}
+
+
+
+/* input {
+  border: none;
+  border-bottom: 1px solid #d1d1d1;
+  font-size: 1.2em;
+  width: 100%;
+  padding: 8px;
+}
+
+button {
+  width: 100%;
+  background-color: #2096F3;
+  color: #fff;
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+}
+
+label {
+  display: block;
+  margin-bottom: .5em;
+}
+
+:focus {
+  outline: none;
+}
+
+.content {
+  background-color: #fff;
+  width: 600px;
+  margin: 10px auto;
+  border: 1px solid #d1d1d1;
+  padding: 30px;
+}
+
+.control {
+  margin-bottom: 3em;
+}
+
+.required {
+  margin-left: .3em;
+  color: #f33;
+  font-size: .9em;
+  padding: 3px;
+  background-color: #fee;
+  font-weight: bold;
+} */
